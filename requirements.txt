@@ -1,0 +1,5 @@
+pandas>=2.0
+numpy>=1.24
+matplotlib>=3.7
+kagglehub>=0.2        # downloads the dataset from Kaggle
+jupyterlab>=4.0       # to run the notebook
