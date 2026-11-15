@@ -1,6 +1,6 @@
 # 🚲 City Bike-Share Analysis
 
-**An end-to-end SQL + Python analysis of 16 million Capital Bikeshare trips (Washington, DC, May 2020 – Aug 2024): when people ride, where, on what, and how weather changes it.**
+**A SQL and Python analysis of 16 million Capital Bikeshare trips (Washington, DC, May 2020 – Aug 2024): when people ride, where, on what, and how weather changes it.**
 
 ![Python](https://img.shields.io/badge/Python-3.9%2B-blue) ![SQLite](https://img.shields.io/badge/SQLite-SQL-lightgrey) ![pandas](https://img.shields.io/badge/pandas-analysis-150458) ![Matplotlib](https://img.shields.io/badge/Matplotlib-visualization-11557c)
 
