@@ -85,22 +85,6 @@ All 18 images are in [`images/`](images).
 5. **Dig deeper.** Under-used stations are ranked by trips *per active day* among stations open for at least a year. Weather is compared *within the same season* so that rain is not confused with winter.
 6. **Report.** Findings are computed in the notebook and written to `reports/key_findings.md`, so the text always matches the data.
 
-## Data cleaning
-
-The cleaning rules live in [`sql/02_data_cleaning.sql`](sql/02_data_cleaning.sql), and the matching audit queries in [`sql/01_data_quality_audit.sql`](sql/01_data_quality_audit.sql).
-
-| Issue found | Size | Treatment |
-|---|---|---|
-| Duplicate `ride_id`s | 141 ids | Keep the first occurrence |
-| Trips ending before they start | 8,617 trips | Removed |
-| Trips under 1 minute (false starts) | 265,623 trips (1.65%) | Removed |
-| Trips over 24 hours (bikes not returned) | 21,335 trips (0.13%) | Removed |
-| Inconsistent text, blank station names | – | Trimmed, lower-cased, blank → `NULL` |
-| Coordinates outside the DC area (or 0,0) | – | Set to `NULL`, trip kept |
-| Missing station ids (mostly dockless e-bike trips) | ~9% of trips | Kept for time analysis, excluded from station analysis |
-
-**Result:** 16,086,672 raw trips → **15,790,956 clean trips** (1.84% removed).
-
 ## Tech stack
 
 Python · SQLite · SQL · pandas · NumPy · Matplotlib · Jupyter
@@ -125,45 +109,9 @@ city-bike-share/
 └── requirements.txt
 ```
 
-## Getting started
-
-```bash
-git clone https://github.com/tokaaraafat/city-bike-share.git
-cd city-bike-share
-
-python -m venv .venv
-source .venv/bin/activate        # Windows: .venv\Scripts\activate
-pip install -r requirements.txt
-```
-
-**Run the notebook** (recommended)
-
-```bash
-jupyter lab notebooks/City_Bike_Share_Analysis.ipynb
-```
-
-The first run downloads about 1 GB from Kaggle and builds the database.
-
-**Or use the scripts**
-
-```bash
-python -m src.build_database                                       # download, load and clean
-sqlite3 data/city_bike_share.db < sql/01_data_quality_audit.sql    # inspect data quality
-sqlite3 data/city_bike_share.db < sql/queries.sql                  # analysis queries
-```
-
-**Run the tests** (no download needed)
-
-```bash
-python -m unittest discover -s tests -v
-```
-
 ## Data
 
 [Capital Bikeshare dataset on Kaggle](https://www.kaggle.com/datasets/taweilo/capital-bikeshare-dataset-202005202408): trips, stations, usage frequency and daily weather for Washington, DC. The data is not stored in this repository; see [`data/README.md`](data/README.md).
-
-## Skills demonstrated
-
 SQL (aggregations, joins, `UNION ALL`, date functions) · data auditing and cleaning · Python and pandas · data visualisation and storytelling · reproducible project structure · unit testing
 
 ## License
