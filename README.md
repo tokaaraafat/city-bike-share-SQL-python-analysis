@@ -108,7 +108,7 @@ Python · SQLite · SQL · pandas · NumPy · Matplotlib · Jupyter
 ## Repository structure
 
 ```
-city-bike-share-analysis/
+city-bike-share/
 ├── notebooks/
 │   └── City_Bike_Share_Analysis.ipynb   # full analysis: SQL EDA → cleaning → visuals → findings
 ├── sql/
@@ -128,8 +128,8 @@ city-bike-share-analysis/
 ## Getting started
 
 ```bash
-git clone https://github.com/tokaaraafat/city-bike-share-analysis.git
-cd city-bike-share-analysis
+git clone https://github.com/tokaaraafat/city-bike-share.git
+cd city-bike-share
 
 python -m venv .venv
 source .venv/bin/activate        # Windows: .venv\Scripts\activate
