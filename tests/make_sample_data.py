@@ -1,9 +1,6 @@
 """
-Generate a SMALL SYNTHETIC dataset with the same schema as the Kaggle files.
-
-This is only for testing the pipeline / trying the code without downloading
-~1 GB of data. The numbers it produces are random and mean nothing; never
-publish results computed from it.
+Generate a small synthetic dataset with the same schema as the Kaggle files,
+for trying the pipeline without the full download.
 
     python -m tests.make_sample_data --out data/sample_csvs --trips 200000
 """

@@ -445,7 +445,7 @@ def plot_dashboard(hourly: pd.DataFrame, weekday: pd.DataFrame, monthly: pd.Data
     ax.set_xticks(range(1, 13))
     ax.set_xticklabels(list("JFMAMJJASOND"))
     ax.yaxis.set_major_formatter(mtick.FuncFormatter(_millions))
-    ax.legend(frameon=False, fontsize=8, ncol=2)
+    ax.legend(loc="upper left", frameon=False, fontsize=8, ncol=2)
 
     # fleet mix
     ax = axes[1, 0]
