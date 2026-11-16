@@ -80,7 +80,7 @@ All 18 images are in [`images/`](images).
 
 1. **Load.** Four CSV files are loaded into SQLite; the 16 M-row trips file is streamed in chunks to keep memory low.
 2. **Explore with SQL.** Aggregations, joins and `UNION ALL` answer the first round of questions (fleet mix, busiest hours and days, top stations, station net flow, member vs casual, weather).
-3. **Audit and clean.** Duplicates, invalid timestamps, very short and very long trips and bad coordinates are handled in one reproducible SQL script that builds the table `trips_clean`. The raw table is never modified.
+3. **Audit and clean.** Duplicates, invalid timestamps, very short and very long trips and bad coordinates are handled in one reproducible SQL script that builds the table `trips_clean`. The raw tables is never modified.
 4. **Visualise.** Reusable plotting functions in [`src/plots.py`](src/plots.py) produce 17 charts and a one-page dashboard in a consistent style.
 5. **Dig deeper.** Under-used stations are ranked by trips *per active day* among stations open for at least a year. Weather is compared *within the same season* so that rain is not confused with winter.
 6. **Report.** Findings are computed in the notebook and written to `reports/key_findings.md`, so the text always matches the data.
